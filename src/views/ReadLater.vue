@@ -20,7 +20,6 @@
 
 <script>
 	import NewsHeadlines from '@/components/NewsHeadlines';
-	import axios from 'axios';
 
 	export default {
 		name: 'Read Later',
@@ -35,7 +34,7 @@
 			};
 		},
 		methods: {},
-		async created() {
+		created() {
 			const data = window.localStorage.getItem('savedNews');
 			this.articles = JSON.parse(data);
 		},

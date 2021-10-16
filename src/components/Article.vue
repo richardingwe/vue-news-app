@@ -25,7 +25,7 @@
 			>
 				<div
 					to="/readlater"
-					class="hover:bg-gray-700 flex bg-gray-800 rounded py-2 px-4 mx-2"
+					class="hover:bg-gray-700 flex bg-gray-800 rounded py-2 px-4"
 				>
 					<svg
 						class="w-5 mr-2"

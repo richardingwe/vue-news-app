@@ -6,7 +6,7 @@
 				v-for="source of sources"
 				:key="source.id"
 				:to="{ name: 'Source', params: { source: source.id } }"
-				class="hover:bg-blue-700 bg-blue-800 rounded py-2 px-4 mx-2"
+				class="hover:bg-gray-800 bg-blue-800 rounded py-2 px-4 mx-2"
 			>
 				{{ source.name }}
 			</router-link>

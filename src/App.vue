@@ -1,11 +1,18 @@
 <template>
+	<!-- header -->
 	<Header :countryName="countryName" />
+	<!-- header -->
+
 	<div class="container mx-auto flex flex-wrap py-6">
+		<!-- main section -->
 		<router-view :key="$route.fullPath" />
+		<!-- main section -->
+
 		<!-- Sidebar Section -->
 		<aside class="w-full md:w-1/3 flex flex-col items-center px-3">
 			<Sources :sources="sources" />
 		</aside>
+		<!-- Sidebar Section -->
 	</div>
 </template>
 

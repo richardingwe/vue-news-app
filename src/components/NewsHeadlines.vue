@@ -1,6 +1,5 @@
 <template>
 	<!-- Posts Section -->
-
 	<section class="w-full md:w-2/3 flex flex-col items-center px-3">
 		<Article
 			v-for="article of articles"
@@ -24,9 +23,7 @@
 		},
 		methods: {
 			saveNews(article) {
-				console.log(article);
 				let savedNews, data;
-				console.log(window.localStorage.savedNews);
 				if (window.localStorage.savedNews) {
 					data = window.localStorage.getItem('savedNews');
 					savedNews = JSON.parse(data);
