@@ -29,7 +29,7 @@
 			},
 			async fetchNewsHeadline() {
 				const { data } = await axios.get(
-					`https://newsapi.org/v2/everything?q=${this.$route.query.term}&from=2021-10-16&sortBy=popularity&apiKey=8012e2c20c93465aa42c54411f613081`
+					`https://newsapi.org/v2/everything?q=${this.$route.query.term}&from=2021-10-16&sortBy=popularity&apiKey=1efdfe8960be48769fde84b4b1dfb63d`
 				);
 				this.articles = data.articles.slice(0, 5);
 			},

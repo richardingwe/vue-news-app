@@ -40,7 +40,7 @@
 			},
 			async fetchSources() {
 				const { data } = await axios.get(
-					`https://newsapi.org/v2/top-headlines/sources?&apiKey=8012e2c20c93465aa42c54411f613081`
+					`https://newsapi.org/v2/top-headlines/sources?&apiKey=1efdfe8960be48769fde84b4b1dfb63d`
 				);
 				this.sources = data.sources;
 				console.log(data);

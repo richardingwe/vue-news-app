@@ -29,7 +29,7 @@
 			},
 			async fetchNewsHeadline() {
 				const { data } = await axios.get(
-					`https://newsapi.org/v2/top-headlines?country=${this.countryCode}&category=${this.$route.params.category}&apiKey=8012e2c20c93465aa42c54411f613081`
+					`https://newsapi.org/v2/top-headlines?country=${this.countryCode}&category=${this.$route.params.category}&apiKey=1efdfe8960be48769fde84b4b1dfb63d`
 				);
 				this.articles = data.articles.slice(0, 5);
 			},
