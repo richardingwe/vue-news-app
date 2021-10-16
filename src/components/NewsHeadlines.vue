@@ -21,7 +21,11 @@
 						}}</a>
 					</p>
 					<a href="#" class="pb-6">{{ article.description }}</a>
-					<div class="flex items-center text-lg text-white pr-6 cursor-pointer">
+					<div
+						v-if="$route.path !== '/savednews'"
+						class="flex items-center text-lg text-white pr-6 cursor-pointer"
+						@click="saveNews(article)"
+					>
 						<div
 							to="/savednews"
 							class="hover:bg-gray-700 flex bg-gray-800 rounded py-2 px-4 mx-2"
@@ -41,7 +45,6 @@
 									d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
 								></path>
 							</svg>
-
 							Add to saved news
 						</div>
 					</div>
@@ -86,9 +89,25 @@
 				);
 				this.sources = data.sources;
 			},
+			saveNews(article) {
+				console.log(article);
+				let savedNews, data;
+				console.log(window.localStorage.savedNews);
+				if (window.localStorage.savedNews) {
+					data = window.localStorage.getItem('savedNews');
+					savedNews = JSON.parse(data);
+					window.localStorage.setItem(
+						'savedNews',
+						JSON.stringify([...savedNews, article])
+					);
+				} else {
+					window.localStorage.setItem('savedNews', JSON.stringify([article]));
+				}
+			},
 		},
 		async created() {
 			await this.fetchSources();
+			console.log(this.$route.path !== '/savednews');
 		},
 	};
 </script>

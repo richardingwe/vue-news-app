@@ -43,7 +43,6 @@
 			},
 		},
 		async created() {
-			console.log(this.$route.params);
 			await this.fetchLocation();
 			await this.fetchNewsHeadline();
 		},

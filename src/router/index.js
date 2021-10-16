@@ -3,6 +3,7 @@ import Home from '../views/Home.vue';
 import Category from '../views/Category.vue';
 import Source from '../views/Source.vue';
 import Search from '../views/Search.vue';
+import SavedNews from '../views/SavedNews.vue';
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: Search
+  },
+  {
+    path: '/savednews',
+    name: 'Saved News',
+    component: SavedNews
   }
 ];
 
