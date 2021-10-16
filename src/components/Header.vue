@@ -147,6 +147,7 @@
 					path: '/search',
 					query: { term: this.searchTerm },
 				});
+				this.searchTerm = '';
 			},
 		},
 	};

@@ -4,11 +4,7 @@
 	>
 		{{ $route.params.category }} News
 	</h1>
-	<NewsHeadlines
-		:articles="articles"
-		:countryName="countryName"
-		:countryCode="countryCode"
-	/>
+	<NewsHeadlines :articles="articles" :countryCode="countryCode" />
 </template>
 
 <script>
@@ -32,7 +28,7 @@
 				const data = await axios.get(
 					'http://api.ipapi.com/check?access_key=b35c00f918f2a7d247ad4a0255a1b433&format=1'
 				);
-				this.countryName = data.data.country_name;
+				this.countryName = data.data.country;
 				this.countryCode = data.data.country_code;
 			},
 			async fetchNewsHeadline() {

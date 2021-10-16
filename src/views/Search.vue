@@ -4,11 +4,7 @@
 	>
 		Search results for "{{ $route.query.term }}"
 	</h1>
-	<NewsHeadlines
-		:articles="articles"
-		:countryName="countryName"
-		:countryCode="countryCode"
-	/>
+	<NewsHeadlines :articles="articles" :countryCode="countryCode" />
 </template>
 
 <script>

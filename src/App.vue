@@ -35,16 +35,15 @@
 		},
 		methods: {
 			async fetchLocation() {
-				const data = await axios.get(
-					'http://api.ipapi.com/check?access_key=b35c00f918f2a7d247ad4a0255a1b433&format=1'
-				);
-				this.countryName = data.data.country_name;
+				const data = await axios.get('https://ip.seeip.org/geoip');
+				this.countryName = data.data.country;
 			},
 			async fetchSources() {
 				const { data } = await axios.get(
 					`https://newsapi.org/v2/top-headlines/sources?&apiKey=8012e2c20c93465aa42c54411f613081`
 				);
 				this.sources = data.sources;
+				console.log(data);
 			},
 		},
 		async created() {

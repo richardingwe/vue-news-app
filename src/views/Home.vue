@@ -4,11 +4,7 @@
 	>
 		News Headlines for {{ countryName }}
 	</h1>
-	<NewsHeadlines
-		:articles="articles"
-		:countryName="countryName"
-		:countryCode="countryCode"
-	/>
+	<NewsHeadlines :articles="articles" :countryCode="countryCode" />
 </template>
 
 <script>

@@ -15,7 +15,7 @@
 	export default {
 		name: 'NewsHeadlines',
 		components: { Article },
-		props: ['articles', 'countryName', 'countryCode'],
+		props: ['articles', 'countryCode'],
 		data() {
 			return {
 				sources: [],
