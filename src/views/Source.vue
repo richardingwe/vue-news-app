@@ -4,7 +4,7 @@
 	>
 		News from {{ $route.params.source }}
 	</h1>
-	<NewsHeadlines :articles="articles" :countryCode="countryCode" />
+	<NewsHeadlines :articles="articles" />
 </template>
 
 <script>
@@ -18,17 +18,10 @@
 		},
 		data() {
 			return {
-				countryCode: null,
 				articles: [],
 			};
 		},
 		methods: {
-			async fetchLocation() {
-				const data = await axios.get(
-					'http://api.ipapi.com/api/check?access_key=b35c00f918f2a7d247ad4a0255a1b433'
-				);
-				this.countryCode = data.data.country_code;
-			},
 			async fetchNewsHeadline() {
 				const { data } = await axios.get(
 					`https://newsapi.org/v2/top-headlines?sources=${this.$route.params.source}&apiKey=1efdfe8960be48769fde84b4b1dfb63d`
@@ -37,8 +30,6 @@
 			},
 		},
 		async created() {
-			console.log(this.$route.params);
-			await this.fetchLocation();
 			await this.fetchNewsHeadline();
 		},
 	};

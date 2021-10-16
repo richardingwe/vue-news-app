@@ -15,12 +15,7 @@
 	export default {
 		name: 'NewsHeadlines',
 		components: { Article },
-		props: ['articles', 'countryCode'],
-		data() {
-			return {
-				sources: [],
-			};
-		},
+		props: ['articles'],
 		methods: {
 			saveNews(article) {
 				let savedNews, data;

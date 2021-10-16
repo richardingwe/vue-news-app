@@ -4,7 +4,7 @@
 	>
 		{{ $route.params.category }} News
 	</h1>
-	<NewsHeadlines :articles="articles" :countryCode="countryCode" />
+	<NewsHeadlines :articles="articles" />
 </template>
 
 <script>
