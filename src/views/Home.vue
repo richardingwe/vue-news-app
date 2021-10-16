@@ -40,7 +40,6 @@
 					`https://newsapi.org/v2/top-headlines?country=${this.countryCode}&apiKey=91f1a4b0ec2b4cce931edba153186c9d`
 				);
 				this.articles = data.articles.slice(0, 5);
-				console.log(this.articles);
 			},
 		},
 		async created() {
