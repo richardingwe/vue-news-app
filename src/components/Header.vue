@@ -2,7 +2,7 @@
 	<!-- Top Bar Nav -->
 	<nav class="w-full py-3 bg-blue-800 shadow">
 		<div
-			class="w-full container mx-auto flex flex-wrap items-center justify-between"
+			class="w-full container mx-auto flex  flex-wrap items-center justify-center md:justify-between"
 		>
 			<div>
 				<span class="px-4 text-white">Your location: {{ countryName }}</span>
@@ -11,12 +11,12 @@
 			<!-- Search bar -->
 			<form
 				@submit.prevent="handleSearch"
-				class="flex items-center justify-center"
+				class="flex items-center justify-center my-3 md:my-0"
 			>
 				<div class="flex border-2 rounded">
 					<input
 						type="text"
-						class="px-4 py-2 w-80 outline-none"
+						class="px-4 py-2 w-60 outline-none"
 						placeholder="Search news..."
 						v-model.lazy="searchTerm"
 					/>
