@@ -18,7 +18,7 @@
 						type="text"
 						class="px-4 py-2 w-60 outline-none"
 						placeholder="Search news..."
-						v-model.lazy="searchTerm"
+						v-model="searchTerm"
 					/>
 					<button
 						type="submit"

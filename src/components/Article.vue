@@ -19,7 +19,7 @@
 
 			<!-- add read later button start -->
 			<div
-				v-if="$route.path !== '/savednews'"
+				v-if="$route.path !== '/readlater'"
 				class="flex items-center text-lg text-white pr-6 cursor-pointer"
 				@click="saveNews(article)"
 			>
