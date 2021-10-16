@@ -3,7 +3,7 @@ import Home from '../views/Home.vue';
 import Category from '../views/Category.vue';
 import Source from '../views/Source.vue';
 import Search from '../views/Search.vue';
-import SavedNews from '../views/SavedNews.vue';
+import ReadLater from '../views/ReadLater.vue';
 
 const routes = [
   {
@@ -27,9 +27,9 @@ const routes = [
     component: Search
   },
   {
-    path: '/savednews',
-    name: 'Saved News',
-    component: SavedNews
+    path: '/readlater',
+    name: 'Read Later',
+    component: ReadLater
   }
 ];
 

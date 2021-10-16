@@ -1,8 +1,15 @@
 <template>
 	<h1
+		v-if="articles"
 		class="w-full font-bold p-3 mt-4 text-center text-blue-800 uppercase text-4xl"
 	>
 		Your Saved News
+	</h1>
+	<h1
+		v-else
+		class="w-full font-bold p-3 mt-4 text-center text-blue-800 uppercase text-4xl"
+	>
+		You have no save news
 	</h1>
 	<NewsHeadlines
 		:articles="articles"
@@ -16,7 +23,7 @@
 	import axios from 'axios';
 
 	export default {
-		name: 'Saved News',
+		name: 'Read Later',
 		components: {
 			NewsHeadlines,
 		},
@@ -29,7 +36,6 @@
 		},
 		methods: {},
 		async created() {
-			// console.log(window.localStorage.savedNews);
 			const data = window.localStorage.getItem('savedNews');
 			this.articles = JSON.parse(data);
 		},

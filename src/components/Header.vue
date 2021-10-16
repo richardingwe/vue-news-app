@@ -47,7 +47,7 @@
 
 			<div class="flex items-center text-lg no-underline text-white pr-6">
 				<router-link
-					to="/savednews"
+					to="/readlater"
 					class="hover:bg-gray-700 bg-gray-800 rounded py-2 px-4 mx-2"
 					>Saved News</router-link
 				>
