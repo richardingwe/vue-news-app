@@ -4,11 +4,7 @@
 	>
 		News from {{ $route.params.source }}
 	</h1>
-	<NewsHeadlines
-		:articles="articles"
-		:countryName="countryName"
-		:countryCode="countryCode"
-	/>
+	<NewsHeadlines :articles="articles" :countryCode="countryCode" />
 </template>
 
 <script>
@@ -22,17 +18,13 @@
 		},
 		data() {
 			return {
-				countryName: null,
 				countryCode: null,
 				articles: [],
 			};
 		},
 		methods: {
 			async fetchLocation() {
-				const data = await axios.get(
-					'http://api.ipapi.com/check?access_key=b35c00f918f2a7d247ad4a0255a1b433&format=1'
-				);
-				this.countryName = data.data.country_name;
+				const data = await axios.get('https://ip.seeip.org/geoip');
 				this.countryCode = data.data.country_code;
 			},
 			async fetchNewsHeadline() {
