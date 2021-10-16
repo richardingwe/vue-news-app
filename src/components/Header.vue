@@ -1,35 +1,28 @@
 <template>
 	<!-- Top Bar Nav -->
-	<nav class="w-full py-4 bg-blue-800 shadow">
+	<nav class="w-full py-3 bg-blue-800 shadow">
 		<div
 			class="w-full container mx-auto flex flex-wrap items-center justify-between"
 		>
-			<nav>
-				<ul
-					class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline"
-				>
-					<li>
-						<span class="hover:text-gray-200 px-4" href="#"
-							>Your location: {{ countryName }}</span
-						>
-					</li>
-				</ul>
-			</nav>
+			<div>
+				<span class="px-4 text-white">Your location: {{ countryName }}</span>
+			</div>
 
+			<!-- Search bar -->
 			<form
 				@submit.prevent="handleSearch"
 				class="flex items-center justify-center"
 			>
-				<div class="flex border-2 rounded bg-gray-800">
+				<div class="flex border-2 rounded">
 					<input
 						type="text"
-						class="px-4 py-2 w-80"
+						class="px-4 py-2 w-80 outline-none"
 						placeholder="Search news..."
 						v-model.lazy="searchTerm"
 					/>
 					<button
 						type="submit"
-						class="flex items-center justify-center px-4 border-l"
+						class="flex items-center justify-center px-4 border-l outline-none bg-gray-800 hover:bg-gray-700"
 					>
 						<svg
 							class="w-6 h-6 text-white"
@@ -44,7 +37,9 @@
 					</button>
 				</div>
 			</form>
+			<!-- Search bar -->
 
+			<!-- read later route button -->
 			<div class="flex items-center text-lg no-underline text-white pr-6">
 				<router-link
 					to="/readlater"
@@ -52,6 +47,7 @@
 					>Saved News</router-link
 				>
 			</div>
+			<!-- read later route button -->
 		</div>
 	</nav>
 
