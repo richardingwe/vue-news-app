@@ -2,7 +2,7 @@
 	<h1
 		class="w-full font-bold p-3 mt-4 text-center text-blue-800 uppercase text-4xl"
 	>
-		News Headlines for {{ countryName }}
+		Search results for "{{ $route.query.term }}"
 	</h1>
 	<NewsHeadlines
 		:articles="articles"
@@ -16,7 +16,7 @@
 	import axios from 'axios';
 
 	export default {
-		name: 'Home',
+		name: 'Search',
 		components: {
 			NewsHeadlines,
 		},
@@ -37,10 +37,9 @@
 			},
 			async fetchNewsHeadline() {
 				const { data } = await axios.get(
-					`https://newsapi.org/v2/top-headlines?country=${this.countryCode}&apiKey=91f1a4b0ec2b4cce931edba153186c9d`
+					`https://newsapi.org/v2/everything?q=${this.$route.query.term}&from=2021-10-16&sortBy=popularity&apiKey=91f1a4b0ec2b4cce931edba153186c9d`
 				);
 				this.articles = data.articles.slice(0, 5);
-				console.log(this.articles);
 			},
 		},
 		async created() {

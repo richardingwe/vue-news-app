@@ -1,30 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+	<Header :countryName="countryName" />
+	<router-view :key="$route.fullPath" />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+	import Header from '@/components/Header';
+	import axios from 'axios';
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+	export default {
+		name: 'App',
+		components: {
+			Header,
+		},
+		data() {
+			return {
+				countryName: null,
+			};
+		},
+		methods: {
+			async fetchLocation() {
+				const data = await axios.get(
+					'http://api.ipapi.com/check?access_key=b35c00f918f2a7d247ad4a0255a1b433&format=1'
+				);
+				this.countryName = data.data.country_name;
+			},
+		},
+		async created() {
+			await this.fetchLocation();
+		},
+	};
+</script>
