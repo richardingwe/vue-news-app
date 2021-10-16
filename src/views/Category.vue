@@ -24,7 +24,9 @@
 		},
 		methods: {
 			async fetchLocation() {
-				const data = await axios.get('https://ip.seeip.org/geoip');
+				const data = await axios.get(
+					'http://api.ipapi.com/api/check?access_key=b35c00f918f2a7d247ad4a0255a1b433'
+				);
 				this.countryCode = data.data.country_code;
 			},
 			async fetchNewsHeadline() {
